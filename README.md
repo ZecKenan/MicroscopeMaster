@@ -85,7 +85,8 @@ are standard for ESP32 development in PlatformIO and should be included with the
 they are available first!
 
 ### Non-Standard Libraries
+To download these libraries, find them in GitHub and follow the instructions.
+
 * **ESPAsyncWebServer** and **AsyncTCP**: For creating asynchronous web servers on the ESP32.
 * **WiFiManager**: Helps manage Wi-Fi connections and credentials.
-
-To download these libraries, find them in GitHub and follow the instructions. 
+ 
