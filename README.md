@@ -9,7 +9,7 @@ searching for the TRITA-number: TRITA-SCI-GRU ; 2024:367. Find further technical
 ## Hardware Components
 The main hardware components used are:
 * ESP32-CAM with 4MB PSRAM
-* ESP32-Devkit
+* ESP32-Dev
 * 2MP OmniVision Camera (model OV2640)
 * MB-adapter
 
@@ -85,8 +85,27 @@ are standard for ESP32 development in PlatformIO and should be included with the
 they are available first!
 
 ### Non-Standard Libraries
-To download these libraries, find them in GitHub and follow the instructions.
+To download these libraries, find them on GitHub and follow the instructions.
 
 * **ESPAsyncWebServer** and **AsyncTCP**: For creating asynchronous web servers on the ESP32.
 * **WiFiManager**: Helps manage Wi-Fi connections and credentials.
  
+## For the User: General
+1. Clone this repository. You can do it by typing **git clone https://github.com/ZecKenan/MicroscopeMaster.git** into your terminal.
+2. Open PlatformIO (assuming you downloaded that extension), navigate to *File* and select *New Project*.
+3. Navigate to the directory where you cloned the repository, select it and click *Open*.
+
+### For the User: Microscope
+1. In the Microscope/src/main.cpp, change the macServerUrl to your IP-address and port. You can find your IP-address in the network settings. Make sure
+it ends with the "/upload".
+2. In the server code (*ServerRun.py*), change the path to where the file with the images should be saved. Include this at the end of the path: /pic{}.jpg’.format(image_counter). Now start the server by running the server code.
+3. Upload the Microscope code to an ESP32-CAM.
+4. Upload the MicroscopeLight code to an ESP32-Dev.
+5. Run the server code.
+
+The microscope is now taking images every 2.5 minutes (to change the interval, change the *unsigned long delayTime* to a desired time. The time should 
+be in ms!). The images are sent to your computer. For segmentation, open the MicroscopeMaster/Segmentation/Segmentation.py - file and follow the instructions
+given there. For troubleshooting, check out Appendix B in the thesis which you can find under "Description". 
+
+## For the Developer
+In this thesis, two distinct microcontrollers are used for the microscope (ESP32-CAM) and for the light (ESP32-Dev). This 
