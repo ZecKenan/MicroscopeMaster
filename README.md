@@ -108,4 +108,5 @@ be in ms!). The images are sent to your computer. For segmentation, open the Mic
 given there. For troubleshooting, check out Appendix B in the thesis which you can find under "Description". 
 
 ## For the Developer
-In this thesis, two distinct microcontrollers are used for the microscope (ESP32-CAM) and for the light (ESP32-Dev). This 
+In this thesis, two separate microcontrollers are used for the microscope (ESP32-CAM) and for the light (ESP32-Dev). However, the ESP32-CAM is fully capable of doing these tasks alone. Furthermore, the ESP32 has an output voltage of 3.3V. An Op-amp should be implemented to enable 12V light sources in order to get dark-field images. The illumination system could be improved by automatising it so that it can move in the z-direction. Since the cells are living, they naturally move, grow in height, and experience drift. To maintain consistent image quality, the light source must adjust accordingly. To detect when the light source has to move, a kernel with an arbitrary size could be deployed to transverse through the acquired image and calculate the change in intensity. This in turn can be used as training data to train a machine learning algorithm to correlate change in intensity with change in the height of the illumination setup.
+
