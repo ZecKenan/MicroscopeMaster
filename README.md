@@ -1,5 +1,5 @@
 # Master Thesis Project - Development of a Complete Minuscule Microscope: Embedding Data Pipeline and Machine Learning Segmentation
-![Microscope Image](Images/Dark-Field Image.png)
+![Microscope Image](Images/Dark-Field/Image.png)
 ## Description
 The aim of my master thesis was to develop a microscope using comercially available components for monitoring cells in incubators. The microscope developed was 
 cost-effective with small dimensions. The images taken with the microscope are wirelessly sent to a computer via a server where they can be segmented for
